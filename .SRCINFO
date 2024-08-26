@@ -1,0 +1,15 @@
+pkgbase = key-gen
+	pkgdesc = Key generator.
+	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1.1
+	pkgrel = 1
+	url = https://github.com/themartiancompany/key-gen
+	arch = any
+	license = AGPL3
+	checkdepends = shellcheck
+	makedepends = make
+	depends = bash
+	source = key-gen-128c3debf3ed692fb5eee43837416a95d322ce75.zip::https://github.com/themartiancompany/key-gen/archive/128c3debf3ed692fb5eee43837416a95d322ce75.zip
+	validpgpkeys = 97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9
+	sha256sums = 31feeca46e960bfbe0a9ce169f1071fcf04af7a3657590a70c932e57d59e2c09
+
+pkgname = key-gen
