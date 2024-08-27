@@ -1,6 +1,6 @@
 pkgbase = key-gen
 	pkgdesc = Key generator.
-	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1
+	pkgver = 0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1
 	pkgrel = 1
 	url = https://github.com/themartiancompany/key-gen
 	arch = any
@@ -8,8 +8,8 @@ pkgbase = key-gen
 	checkdepends = shellcheck
 	makedepends = make
 	depends = bash
-	source = key-gen-699c3e3d8dfd17a278d9caa8fdc14164e47f6239.zip::https://github.com/themartiancompany/key-gen/archive/699c3e3d8dfd17a278d9caa8fdc14164e47f6239.zip
+	source = key-gen-001bca86d45d99942fce79eafc4b6557a4a721c6.zip::https://github.com/themartiancompany/key-gen/archive/001bca86d45d99942fce79eafc4b6557a4a721c6.zip
 	validpgpkeys = 97E989E6CF1D2C7F7A41FF9F95684DBE23D6A3E9
-	sha256sums = ab35fafd843dd94f94af528cfb3e93a01273d2e61c9a050c03241a6c553a10c6
+	sha256sums = 262447bfd2c078fb15a31c9a0a95a08af3dac74f8632dcb3935980b12729d02c
 
 pkgname = key-gen

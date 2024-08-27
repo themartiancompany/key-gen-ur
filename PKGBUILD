@@ -6,8 +6,8 @@
 _offline="false"
 _git="false"
 pkgname=key-gen
-pkgver=0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1
-_commit="699c3e3d8dfd17a278d9caa8fdc14164e47f6239"
+pkgver=0.0.0.0.0.0.0.0.0.0.0.0.0.1.1.1.1
+_commit="001bca86d45d99942fce79eafc4b6557a4a721c6"
 pkgrel=1
 _pkgdesc=(
   "Key generator."
@@ -67,7 +67,7 @@ _tarname="${pkgname}-${_tag}"
     _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
   elif [[ "${_tag_name}" == "commit" ]]; then
     _tar="${_tarname}.zip::${_url}/archive/${_commit}.zip"
-    _sum="ab35fafd843dd94f94af528cfb3e93a01273d2e61c9a050c03241a6c553a10c6"
+    _sum="262447bfd2c078fb15a31c9a0a95a08af3dac74f8632dcb3935980b12729d02c"
   fi && \
     source+=(
       "${_tar}"
