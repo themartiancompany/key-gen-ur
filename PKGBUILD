@@ -47,7 +47,7 @@ _offline="false"
 _git="false"
 pkgname=key-gen
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
-_commit="58d86d2bd7f96946ece6b1883fc0cfc5e1ec3fce"
+_commit="e0e55d9712f4416d22210ab718455980d8091a44"
 pkgrel=1
 _pkgdesc=(
   "Key generator."
@@ -89,8 +89,8 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_archive_sum="1afd19de2a306ce7b959b4e5913805c0b8da5a8295464b7f53344b00d45ae805"
-_archive_sig_sum="49dcf7595b4b77144192376a57c2b4e81455a8d5f9bf23c5283b83374a5de063"
+_archive_sum="0653746e26f5a2082679a4766216f2172fb2a4b6bf39d264d65b3f6f48a49854"
+_archive_sig_sum="0cce7b6c647cda146f5c15f8ea251bd72c03a665d7a70b08d3479ff49beceb0a"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
 _evmfs_ns="0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b"
 _evmfs_network="100"
