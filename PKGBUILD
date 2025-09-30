@@ -20,10 +20,13 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
-# Maintainer: Truocolo <truocolo@aol.com>
-# Maintainer: Truocolo <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
-# Maintainer: Pellegrino Prevete (dvorak) <pellegrinoprevete@gmail.com>
-# Maintainer: Pellegrino Prevete (dvorak) <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
+# Maintainer:
+#   Truocolo
+#     <truocolo@aol.com>
+#     <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
+#   Pellegrino Prevete (dvorak)
+#     <pellegrinoprevete@gmail.com>
+#     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
 
 _os="$( \
   uname \
@@ -44,7 +47,7 @@ _offline="false"
 _git="false"
 pkgname=key-gen
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
-_commit="93607470f11275a97b63c0156ce730521be4eb67"
+_commit="58d86d2bd7f96946ece6b1883fc0cfc5e1ec3fce"
 pkgrel=1
 _pkgdesc=(
   "Key generator."
@@ -86,14 +89,16 @@ _tarname="${pkgname}-${_tag}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
+_archive_sum="1afd19de2a306ce7b959b4e5913805c0b8da5a8295464b7f53344b00d45ae805"
+_archive_sig_sum="49dcf7595b4b77144192376a57c2b4e81455a8d5f9bf23c5283b83374a5de063"
+_evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
+_evmfs_ns="0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b"
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
-_evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
-_archive_sum='88381d74bb098206d993a194a0be04cc5de19615b3875dba081bdcf11a8b97ff'
-_evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
+_evmfs_dir="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}"
+_evmfs_archive_uri="${_evmfs_dir}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
-_archive_sig_sum="94928a82d94ebe0e7f14a98948265f44869b2e3fded7318f5defef5178cb0f61"
-_archive_sig_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sig_sum}"
+_archive_sig_uri="${_evmfs_dir}/${_archive_sig_sum}"
 _archive_sig_src="${_tarname}.zip.sig::${_archive_sig_uri}"
 if [[ "${_evmfs}" == "true" ]]; then
   makedepends+=(
