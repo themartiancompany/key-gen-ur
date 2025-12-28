@@ -28,10 +28,10 @@
 #     <pellegrinoprevete@gmail.com>
 #     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
 
-_os="$( \
+_os="$(
   uname \
     -o)"
-_evmfs_available="$( \
+_evmfs_available="$(
   command \
     -v \
     "evmfs" || \
@@ -43,11 +43,11 @@ if [[ ! -v "_evmfs" ]]; then
     _evmfs="false"
   fi
 fi
-if [[ ! -v "_git_service" ]]; then
-  _git_service="gitlab"
-fi
 if [[ ! -v "_git" ]]; then
   _git="false"
+fi
+if [[ ! -v "_git_service" ]]; then
+  _git_service="gitlab"
 fi
 if [[ ! -v "_offline" ]]; then
   _offline="false"
@@ -67,8 +67,19 @@ if [[ ! -v "_archive_format" ]]; then
     fi
   fi
 fi
+if [[ ! -v "_docs" ]]; then
+  _docs="true"
+fi
 _pkg=key-gen
-pkgname="${_pkg}"
+pkgbase="${_pkg}"
+pkgname=(
+  "${_pkg}"
+)
+if [[ "${_docs}" == "true" ]]; then
+  pkgname+=(
+    "${pkgbase}-docs"
+  )
+fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
 _commit="e0e55d9712f4416d22210ab718455980d8091a44"
 pkgrel=4
@@ -89,29 +100,47 @@ depends=(
   "bash"
   "coreutils"
 )
-[[ "${_os}" != "GNU/Linux" ]] && \
-[[ "${_os}" == "Android" ]] && \
+if [[ "${_os}" != "GNU/Linux" ]] && \
+   [[ "${_os}" == "Android" ]]; then
   depends+=(
   )
-optdepends=(
-  'evm-wallet: seed phrases generation'
-)
-[[ "${_os}" == 'Android' ]] && \
-  optdepends+=(
-  )
+fi
 makedepends=(
   'make'
 )
+if [[ "${_git}" == "true" ]]; then
+  makedepends+=(
+    "git"
+  )
+fi
+if [[ "${_evmfs}" == "true" ]]; then
+  makedepends+=(
+    "evmfs"
+  )
+fi
+_evm_wallet_optdepends=(
+  'evm-wallet:'
+    'Seed phrases generation.'
+)
+optdepends=(
+  "${_evm_wallet_optdepends[*]}"
+)
+if [[ "${_os}" == 'Android' ]]; then
+  optdepends+=(
+  )
+fi
 checkdepends=(
   "shellcheck"
 )
+source=()
+sha256sums=()
 _url="${url}"
 _tag="${_commit}"
 _tag_name="commit"
 _tarname="${_pkg}-${_tag}"
 _tarfile="${_tarname}.${_archive_format}"
 if [[ "${_offline}" == "true" ]]; then
-  _url="file://${HOME}/${_pkg}"
+  _url="file://${HOME}/${pkgname}"
 fi
 _sum="0653746e26f5a2082679a4766216f2172fb2a4b6bf39d264d65b3f6f48a49854"
 _sig_sum="0cce7b6c647cda146f5c15f8ea251bd72c03a665d7a70b08d3479ff49beceb0a"
@@ -181,14 +210,49 @@ check() {
     check
 }
 
-package() {
-  ls
+package_key-gen() {
+  local \
+    _make_opts=()
+  _make_opts+=(
+    PREFIX="/usr"
+    DESTDIR="${pkgdir}"
+  )
   cd \
     "${_tarname}"
   make \
-    PREFIX="/usr" \
-    DESTDIR="${pkgdir}" \
-    install
+    "${_make_opts[@]}" \
+    install-scripts
+  install \
+    -Dm644 \
+    "COPYING" \
+    -t \
+    "${pkgdir}/usr/share/licenses/${pkgname}/"
+}
+
+package_key-gen-docs() {
+  local \
+    _make_opts=()
+  pkgdesc="${pkgdesc} (documentation)"
+  depends=()
+  optdepends=(
+    "${_key_gen_docs_ref_optdepends[*]}"
+  )
+  provides=()
+  _make_opts+=(
+    PREFIX="/usr"
+    DESTDIR="${pkgdir}"
+  )
+  cd \
+    "${_tarname}"
+  make \
+    "${_make_opts[@]}" \
+    install-doc \
+    install-man
+  install \
+    -Dm644 \
+    "COPYING" \
+    -t \
+    "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
 # vim: ft=sh syn=sh et
