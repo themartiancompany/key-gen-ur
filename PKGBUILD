@@ -48,7 +48,7 @@ _git="false"
 pkgname=key-gen
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
 _commit="e0e55d9712f4416d22210ab718455980d8091a44"
-pkgrel=1
+pkgrel=2
 _pkgdesc=(
   "Key generator."
 )
