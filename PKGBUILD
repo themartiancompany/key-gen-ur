@@ -71,7 +71,7 @@ _pkg=key-gen
 pkgname="${_pkg}"
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
 _commit="e0e55d9712f4416d22210ab718455980d8091a44"
-pkgrel=2
+pkgrel=3
 _pkgdesc=(
   "Key generator."
 )
