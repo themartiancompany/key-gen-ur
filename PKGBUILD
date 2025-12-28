@@ -91,7 +91,9 @@ if [[ "${_offline}" == "true" ]]; then
 fi
 _archive_sum="0653746e26f5a2082679a4766216f2172fb2a4b6bf39d264d65b3f6f48a49854"
 _archive_sig_sum="0cce7b6c647cda146f5c15f8ea251bd72c03a665d7a70b08d3479ff49beceb0a"
+# Dvorak
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
+# Truocolo
 _evmfs_ns="0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b"
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
