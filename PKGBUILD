@@ -80,9 +80,9 @@ if [[ "${_docs}" == "true" ]]; then
     "${pkgbase}-docs"
   )
 fi
-pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1"
-_commit="53e2af8467a6aa42695650bdd8b08298ad8c365e"
-pkgrel=8
+pkgver="0.0.0.0.0.0.0.0.0.0.0.1"
+_commit="c3af726a004724ecab0403121e1bf07e73832a80"
+pkgrel=1
 _pkgdesc=(
   "Key generator."
 )
@@ -150,8 +150,8 @@ _tarfile="${_tarname}.${_archive_format}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_sum="7b314ab1a56569624780711d3579c5feda0c1fc241625ac5f40fe607aa170106"
-_sig_sum="6764580785ec71364d3fcc9fc45267497fc479caadc724351832fd0e6381c73b"
+_sum="7b1ba562ca2b64b2f6c7736d06df904fccaffa139ef337d95091309fb28afed7"
+_sig_sum="5a0919ac2609e0ec4d1e84a64e095b47a57516075ba5d5f3c381ba953d5b0c05"
 # Truocolo
 _evmfs_ns="0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b"
 # Dvorak
@@ -231,7 +231,7 @@ package_key-gen() {
     "${_make_opts[@]}" \
     install-scripts
   install \
-    -Dm644 \
+    -vDm644 \
     "COPYING" \
     -t \
     "${pkgdir}/usr/share/licenses/${pkgname}/"
