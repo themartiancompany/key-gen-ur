@@ -80,9 +80,9 @@ if [[ "${_docs}" == "true" ]]; then
     "${pkgbase}-docs"
   )
 fi
-pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1"
-_commit="e0e55d9712f4416d22210ab718455980d8091a44"
-pkgrel=4
+pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1"
+_commit="53e2af8467a6aa42695650bdd8b08298ad8c365e"
+pkgrel=6
 _pkgdesc=(
   "Key generator."
 )
@@ -142,12 +142,12 @@ _tarfile="${_tarname}.${_archive_format}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_sum="0653746e26f5a2082679a4766216f2172fb2a4b6bf39d264d65b3f6f48a49854"
-_sig_sum="0cce7b6c647cda146f5c15f8ea251bd72c03a665d7a70b08d3479ff49beceb0a"
-# Dvorak
-_evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
+_sum="7b314ab1a56569624780711d3579c5feda0c1fc241625ac5f40fe607aa170106"
+_sig_sum="6764580785ec71364d3fcc9fc45267497fc479caadc724351832fd0e6381c73b"
 # Truocolo
 _evmfs_ns="0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b"
+# Dvorak
+_evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_dir="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}"
