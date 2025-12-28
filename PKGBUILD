@@ -122,13 +122,21 @@ _evm_wallet_optdepends=(
   'evm-wallet:'
     'Seed phrases generation.'
 )
+_key_gen_docs_optdepends=(
+  "${_pkg}-docs:"
+    "Key-gen"
+    "documentation"
+    "and manuals."
+)
+_key_gen_docs_ref_optdepends+=(
+ "${_pkg}:"
+   "The package this documentation"
+   "package pertains to."
+)
 optdepends=(
   "${_evm_wallet_optdepends[*]}"
+  "${_key_gen_docs_optdepends[*]}"
 )
-if [[ "${_os}" == 'Android' ]]; then
-  optdepends+=(
-  )
-fi
 checkdepends=(
   "shellcheck"
 )
