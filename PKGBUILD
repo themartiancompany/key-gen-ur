@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0
+#s SPDX-License-Identifier: AGPL-3.0
 
 #    ----------------------------------------------------------------------
 #    Copyright © 2024, 2025  Pellegrino Prevete
@@ -82,7 +82,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.1.1.1"
 _commit="53e2af8467a6aa42695650bdd8b08298ad8c365e"
-pkgrel=7
+pkgrel=8
 _pkgdesc=(
   "Key generator."
 )
