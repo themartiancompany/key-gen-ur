@@ -70,6 +70,7 @@ fi
 if [[ ! -v "_docs" ]]; then
   _docs="true"
 fi
+_py="python"
 _pkg=key-gen
 pkgbase="${_pkg}"
 pkgname=(
@@ -82,7 +83,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.1"
 _commit="c3af726a004724ecab0403121e1bf07e73832a80"
-pkgrel=1
+pkgrel=2
 _pkgdesc=(
   "Key generator."
 )
@@ -116,6 +117,11 @@ fi
 if [[ "${_evmfs}" == "true" ]]; then
   makedepends+=(
     "evmfs"
+  )
+fi
+if [[ "${_docs}" == "true" ]]; then
+  makedepends+=(
+    "${_py}-docutils"
   )
 fi
 _evm_wallet_optdepends=(
