@@ -83,7 +83,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.1"
 _commit="c3af726a004724ecab0403121e1bf07e73832a80"
-pkgrel=2
+pkgrel=3
 _pkgdesc=(
   "Key generator."
 )
