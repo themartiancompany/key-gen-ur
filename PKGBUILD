@@ -83,7 +83,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.1"
 _commit="c3af726a004724ecab0403121e1bf07e73832a80"
-pkgrel=7
+pkgrel=8
 _pkgdesc=(
   "Key generator."
 )
@@ -158,8 +158,8 @@ if [[ "${_offline}" == "true" ]]; then
 fi
 _gitlab_sum="7b1ba562ca2b64b2f6c7736d06df904fccaffa139ef337d95091309fb28afed7"
 _gitlab_sig_sum="5a0919ac2609e0ec4d1e84a64e095b47a57516075ba5d5f3c381ba953d5b0c05"
-_github_sum="7b1ba562ca2b64b2f6c7736d06df904fccaffa139ef337d95091309fb28afed7"
-_github_sig_sum="5a0919ac2609e0ec4d1e84a64e095b47a57516075ba5d5f3c381ba953d5b0c05"
+_github_sum="d81829f43bf3378e22b6eca9fd5b0a3910835ed5533599146cd1e1e963005fa3"
+_github_sig_sum="db9d4584ac1963051ebafbd2561b85b81b8c299cfa6225ad44961be7f1d36046"
 if [[ "${_git_service}" == "gitlab" ]]; then
   _sum="${_gitlab_sum}"
   _sig_sum="${_gitlab_sig_sum}"
